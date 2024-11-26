@@ -1,7 +1,7 @@
 ﻿using tyuiu.cources.programming.interfaces.Sprint5;
 namespace Tyuiu.BelousovaOD.Sprint5.Task0.V25.Lib
 {
-    public class DataService : ISprint5Task0V26
+    public class DataService : ISprint5Task0V25
     {
         public string SaveToFileTextData(int x)
         {
