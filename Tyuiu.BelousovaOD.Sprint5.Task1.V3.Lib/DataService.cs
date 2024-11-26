@@ -5,7 +5,7 @@ namespace Tyuiu.BelousovaOD.Sprint5.Task1.V3.Lib
     {
         public string SaveToFileTextData(int startValue, int stopValue)
         {
-            string path = Path.Combine(new string[] { Path.GetTempPath(), "OutPutFileTask1.txt" });
+            string path = Path.GetTempFileName();
             FileInfo fileInfo = new FileInfo(path);
             bool fileExists = fileInfo.Exists;
 
@@ -16,19 +16,12 @@ namespace Tyuiu.BelousovaOD.Sprint5.Task1.V3.Lib
 
             double y;
             string strY;
-
-            for (int i = startValue; i <= stopValue; i++)
+            for (int x = startValue; x <= stopValue; x++)
             {
-                if (2.5 + i != 0)
-                {
-                    y = Math.Round(Math.Cos(2 * i) + Math.Sin(i) / (i + 2.5) + 2 * i, 2);
-                }
-                else
-                {
-                    y = 0;
-                }
+                y = Math.Round(Math.Cos(2 * x) + (Math.Sin(x) / (x + 2.5)) + 2 * x, 2);
                 strY = Convert.ToString(y);
-                if (i != stopValue)
+
+                if (x != stopValue)
                 {
                     File.AppendAllText(path, strY + Environment.NewLine);
                 }
@@ -36,6 +29,7 @@ namespace Tyuiu.BelousovaOD.Sprint5.Task1.V3.Lib
                 {
                     File.AppendAllText(path, strY);
                 }
+
             }
             return path;
         }
