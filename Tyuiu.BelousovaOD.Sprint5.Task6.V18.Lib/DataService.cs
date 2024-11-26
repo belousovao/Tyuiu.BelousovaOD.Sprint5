@@ -5,7 +5,7 @@ namespace Tyuiu.BelousovaOD.Sprint5.Task6.V18.Lib
     {
         public int LoadFromDataFile(string path)
         {
-            int res = 0;
+            var res = 0;
             using (StreamReader reader = new StreamReader(path))
             {
                 string line;
